@@ -1,0 +1,54 @@
+// Viewports
+
+$tablet-width: 768px;
+$desktop-width: 1150px;
+$mobile-width: 767px;
+
+// Fonts
+
+$general-font: "Open Sans", "Arial", sans-serif;
+
+// Colors
+
+$white: #ffffff;
+$black: #000000;
+$aubergine: #231f20;
+$charcoal: #444444;
+$downy: #63d1bb;
+$downy2: #62d1ba;
+$puerto-rico: #56c3b2;
+$puerto-rico2: #46c1ae;
+$dark-cyan: #149080;
+$whisper: #e6e6e6;
+$snow: #f9f9f9;
+$gallery: #ececec;
+$white-smoke: #f1f1f1;
+$whisper2: #e5e5e5;
+
+// General
+
+html {
+  //Sticky footer
+  height: 100%;
+}
+
+body {
+  min-width: 320px;
+  font-family: $general-font;
+  //Sticky footer
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+//Sticky footer
+.main {
+  flex-grow: 1;
+}

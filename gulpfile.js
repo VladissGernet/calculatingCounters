@@ -43,7 +43,8 @@ const html = () => {
 const scripts = () => {
   return gulp.src ('source/js/*.js')
     .pipe (terser())
-    .pipe(gulp.dest('build/js'));
+    .pipe(gulp.dest('build/js'))
+    .pipe(browser.stream());
 }
 
 // Images
@@ -126,6 +127,7 @@ const server = (done) => {
 const watcher = () => {
   gulp.watch('source/scss/**/*.scss', gulp.series(styles));
   gulp.watch('source/html/*.html', gulp.series(html)).on('change', browser.reload);
+  gulp.watch('source/js/*.js', gulp.series(scripts)).on('change', browser.reload);
 }
 
 

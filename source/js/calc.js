@@ -24,12 +24,12 @@ buttonTotal.onclick = function () {
   let elecCalc = (elecInputAfter.value - elecInputBefore.value) * elecConst;
   let gasCalc = (gasInputAfter.value - gasInputBefore.value) * gasConst;
   let waterCalc = (waterInputAfter.value - waterInputBefore.value) * waterConst;
-  let calcTotal = elecCalc + gasCalc + waterCalc;
+  let calcTotal = (elecCalc + gasCalc + waterCalc).toFixed(2);
 
   elecResult.textContent = elecCalc.toString() + " руб.";
   gasResult.textContent = gasCalc.toString() + " руб.";
   waterResult.textContent = waterCalc.toString() + " руб.";
 
-  resultTotal.textContent = calcTotal.toString();
+  resultTotal.textContent = calcTotal.toString() + " руб.";
 }
 

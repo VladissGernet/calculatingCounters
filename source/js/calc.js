@@ -21,9 +21,15 @@ let buttonTotal = document.querySelector(".calc-form__button");
 let resultTotal = document.querySelector(".calc-form__total-result");
 
 buttonTotal.onclick = function () {
-  elecResult.textContent = ((elecInputAfter.value - elecInputBefore.value) * elecConst).toString() + " руб.";
-  gasResult.textContent = ((gasInputAfter.value - gasInputBefore.value) * gasConst).toString() + " руб.";
-  waterResult.textContent = ((waterInputAfter.value - waterInputBefore.value) * waterConst).toString() + " руб.";
-  resultTotal.textContent = "123";
+  let elecCalc = (elecInputAfter.value - elecInputBefore.value) * elecConst;
+  let gasCalc = (gasInputAfter.value - gasInputBefore.value) * gasConst;
+  let waterCalc = (waterInputAfter.value - waterInputBefore.value) * waterConst;
+  let calcTotal = elecCalc + gasCalc + waterCalc;
+
+  elecResult.textContent = elecCalc.toString() + " руб.";
+  gasResult.textContent = gasCalc.toString() + " руб.";
+  waterResult.textContent = waterCalc.toString() + " руб.";
+
+  resultTotal.textContent = calcTotal.toString();
 }
 

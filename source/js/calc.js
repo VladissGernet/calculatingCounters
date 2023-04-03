@@ -31,5 +31,28 @@ buttonTotal.onclick = function () {
   waterResult.textContent = waterCalc.toString() + " руб.";
 
   resultTotal.textContent = calcTotal.toString() + " руб.";
-}
 
+  if (elecCalc < 0) {
+    elecResult.style.color = "red";
+  } else {
+    elecResult.style.color = "black";
+  }
+
+  if (gasCalc < 0) {
+    gasResult.style.color = "red";
+  } else {
+    gasResult.style.color = "black";
+  }
+
+  if (waterCalc < 0) {
+    waterResult.style.color = "red";
+  } else {
+    waterResult.style.color = "black";
+  }
+
+  if (calcTotal < 0) {
+    resultTotal.style.color = "red";
+  } else {
+    resultTotal.style.color = "black";
+  }
+}

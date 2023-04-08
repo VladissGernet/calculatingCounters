@@ -1,6 +1,6 @@
 # Личный проект «Расчет показаний счетчиков»
 
-https://vladissgernet.github.io/calculatingCounters/build/
+https://vladissgernet.github.io/calculatingCounters/
 
 ---
 

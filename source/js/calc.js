@@ -20,18 +20,18 @@ let resultTotal = document.querySelector(".calc-form__total-result");
 let buttonTotal = document.querySelector(".calc-form__button");
 
 buttonTotal.onclick = function () {
-  let elecCalc = (elecInputAfter.value - elecInputBefore.value) * elecConst;
-  let gasCalc = (gasInputAfter.value - gasInputBefore.value) * gasConst;
-  let waterCalc = (waterInputAfter.value - waterInputBefore.value) * waterConst;
-  let calcTotal = (elecCalc + gasCalc + waterCalc).toFixed(2);
+  let calcTotal = 0;
+  let calculation = function(after, before, constValue, result) {
+    let calcValues = (after - before) * constValue;
+    calcTotal += calcValues;
+    result.style.color = (calcValues < 0 ? "red" : "black");
+    return result.textContent = (calcValues.toFixed(2)).toString() + " руб.";
+  }
 
-  elecResult.textContent = elecCalc.toString() + " руб.";
-  gasResult.textContent = gasCalc.toString() + " руб.";
-  waterResult.textContent = waterCalc.toString() + " руб.";
-  resultTotal.textContent = calcTotal.toString() + " руб.";
+  let elecCalc = calculation(elecInputAfter.value, elecInputBefore.value, elecConst, elecResult);
+  let gasCalc = calculation(gasInputAfter.value, gasInputBefore.value, gasConst, gasResult);
+  let waterCalc = calculation(waterInputAfter.value, waterInputBefore.value, waterConst, waterResult);
 
-  elecResult.style.color = (elecCalc < 0 ? "red" : "black");
-  gasResult.style.color = (gasCalc < 0 ? "red" : "black");
-  waterResult.style.color = (waterCalc < 0 ? "red" : "black");
   resultTotal.style.color = (calcTotal < 0 ? "red" : "black");
+  resultTotal.textContent = (calcTotal.toFixed(2)).toString() + " руб.";
 }
